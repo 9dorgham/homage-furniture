@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --c-grey: hsl(0, 0%, 63%);
+    --c-vgrey: hsl(0, 0%, 27%);
+    --m-p: 20px;
+}
+
+html {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+}
+
+.swap {
+    display: none;
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* start */
+
+section {
+    display: flex;
+    height: 535px;
+}
+
+.carousel {
+    display: grid;
+    grid: 1fr / auto-flow 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior: contain;
+    touch-action: pan-x;
+}
+
+.gallery {
+    max-width: 700px;
+}
+
+header {
+    position: absolute;
+    gap: 2em;
+    padding: var(--m-p);
+}
+
+header #logo {
+    width: 4em;
+}
+
+nav a {
+    color: #fff;
+    padding-inline: 10px;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    transition: all 0.3s linear;
+}
+nav a:hover::after {
+    width: calc(100% - 20px)
+}
+
+
+.container{
+    padding: 2em;
+    position: relative;
+}
+.container .slider {
+    overflow-x: hidden;
+}
+.slider .slide h2 {
+    font-size: 2em;
+}
+.slider .slide p {
+    color: var(--c-grey);
+    max-inline-size: 45ch;
+    line-height: 1.5;
+    margin-block: 1em;
+}
+.container .controlls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.container .controlls button {
+    background-color: #000;
+    outline: none;
+    border: none;
+    padding: var(--m-p);
+}
+
+
+
+/* about */
+.about img {
+    width: 30%;
+}
+.about div {
+    flex-basis: 40%;
+    padding: 2em;
+    letter-spacing: 2px;
+}
+.about h3 {
+    margin-block: 1em;
+    text-transform: uppercase;
+}
+.about p {
+    inline-size: 45ch;
+    color: var(--c-grey);
+    /* font-size: 12px; */
+}
